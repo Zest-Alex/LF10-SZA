@@ -1,8 +1,6 @@
 #Prepare Enviroment
 Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned
-Install-Module Az
 Import-Module Az
-Update-Module -name Az.Compute -RequiredVersion 4.28.0
 
 Connect-AzAccount
 

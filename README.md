@@ -1,1 +1,0 @@
-# LF10-FISI-SZA
