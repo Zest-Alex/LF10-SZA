@@ -13,7 +13,9 @@ $vmname = "LF10VM01"
 $securitygroupname = "LF10SEGR01"
 $publicipname = "LF10PUIP01"
 
-
+$vmusername = "LF10TestUser"
+$vmpassword = ConvertTo-SecureString "LF10PasswordTest" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ($vmusername, $vmpassword)
 
 #Create ResourceGroup
 New-AzResourceGroup -Name $rgname -Location $location
@@ -26,6 +28,7 @@ New-AzVirtualNetwork -Name $vnetname -ResourceGroupName $rgname -Location $locat
 New-AzVm `
     -ResourceGroupName $rgname `
     -Name $vmname `
+    -Credential $credential `
     -Location $location `
     -VirtualNetworkName $vnetname `
     -SubnetName $subnetname `
