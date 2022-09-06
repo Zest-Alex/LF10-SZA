@@ -16,7 +16,6 @@ $publicipname = "LF10PUIP01"
 
 
 #Create ResourceGroup
-Write-Host "Creating ResourceGroup $rgname"
 New-AzResourceGroup -Name $rgname -Location $location
 
 #Create Vnet + Subnet
